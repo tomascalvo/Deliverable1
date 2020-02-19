@@ -11,11 +11,13 @@ namespace Deliverable1
             string destination = "destination";
             int groupSize;
             string travelSuggestion = "first class";
+            string result;
             // Define loop variables
             string vacationTypeResponse;
             bool vacationTypeError;
             bool groupSizeError;
-            string anotherTrip;
+            string anotherTripOffer;
+            string anotherTripResponse;
 
             // Ask questions
             do {
@@ -79,12 +81,16 @@ namespace Deliverable1
                     }
                 } while( groupSizeError == true );
 
-                // Ouput travel suggestion and destination
-                Console.WriteLine("Since you're a group of " + groupSize + " going on a " + vacationType + " vacation, you should take " + travelSuggestion + " to " + destination + ".");
-                Console.WriteLine("Would you like to plan another trip?");
-                anotherTrip = Console.ReadLine();
+                // Print travel suggestion and destination
+                result = "Since you're a group of " + groupSize + " going on a " + vacationType + " vacation, you should take " + travelSuggestion + " to " + destination + ".";
+                Console.WriteLine(result);
 
-            } while( anotherTrip == "yes" || anotherTrip == "y"); 
+                // Offer to plan another trip
+                anotherTripOffer = "Would you like to plan another trip?";
+                Console.WriteLine(anotherTripOffer);
+                anotherTripResponse = Console.ReadLine();
+
+            } while( anotherTripResponse.ToLower() == "yes" || anotherTripResponse.ToLower() == "y"); 
             
         }
     }

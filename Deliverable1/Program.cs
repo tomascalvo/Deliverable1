@@ -12,17 +12,23 @@ namespace Deliverable1
             int groupSize;
             string travelSuggestion = "first class";
             // Define loop variables
+            string vacationTypeResponse;
             bool vacationTypeError;
             bool groupSizeError;
             string anotherTrip;
 
             // Ask questions
             do {
+                // Do-while loop allows the user to plan multiple trips without terminating program
+
                 // Ask vacation type
                 do {
-                    vacationTypeError = false;
+                    // Do-while loop allows user multiple attempts to enter an accepted vacation type
+
+                    vacationTypeError = false; /* Bypasses the loop if user inputs an accepted answer */
                     Console.WriteLine("What kind of trip would you like to go on; musical, tropical, or adventurous?");
-                    vacationType = Console.ReadLine();
+                    vacationTypeResponse = Console.ReadLine();
+                    vacationType = vacationTypeResponse.ToLower(); /* Converts upper-case user input to lower-case */ 
 
                     // Determine destination
                     if (vacationType == "musical")
@@ -47,9 +53,11 @@ namespace Deliverable1
                 // Ask group size
                 do
                 {
+                    // Do-while loop allows user multiple attempts to enter an accepted group size
+
                     groupSizeError = false;
                     Console.WriteLine("How many are in your group?");
-                    int.TryParse(Console.ReadLine(), out groupSize);
+                    int.TryParse(Console.ReadLine(), out groupSize); /* TryParse changes the data type of the user input from string to int */
 
                     // Determine travel suggestion
                     if (groupSize >= 1 && groupSize <= 2)

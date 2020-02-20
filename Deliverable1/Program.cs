@@ -10,7 +10,7 @@ namespace Deliverable1
             string vacationType;
             string destination = "destination";
             int groupSize;
-            string travelSuggestion = "first class";
+            string travelSuggestion = "travel suggestion";
             string result;
             // Define loop variables
             string vacationTypeResponse;
